@@ -4,12 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>blade</title>
+    <title></title>
 </head>
 <body>
-    <h1>
-        mon premier site laravel
-    </h1>
-    
+    <form action="{{route("add.post")}}" method="post">
+        @csrf
+
+        @method("POST")
+
+        <button type="submit">add</button>
+
+    </form>
 </body>
 </html>
