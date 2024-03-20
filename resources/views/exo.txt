@@ -1,5 +1,0 @@
-1) creer une route qui prend en parametre le nom de utilisateur , age , le pays , la classe, le nom du pere et la retourner
-comme un tableau associative
-2) creer une route qui retourne une fonction d'un controller qui sera creer dans le dossier web avec comme nom du controller HomeController
-et cet controller contien une methode index qui retourne une page html avec un text
-3) creer une route qui prend en parametre un id et verifie si id est dans une tableau que vous allez declarer si c'est le ca on retourne un true

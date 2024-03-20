@@ -2,29 +2,36 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\PostRequest;
 use App\Models\Post;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
-    public function index(){
-        return view("store");
+    public function index()
+    {
+        // recuperer la liste de tous les postes
+        $posts = Post::all();
+        // dd($posts);
+        return view("posts", compact("posts"));
     }
-
-    public function store(){
+    public function add_post(Request $request){
+        // dd($request);
+        return view("add_post");
+    }
+    public function store(PostRequest $request){
         // methode 1
         // $post = new Post();
         // $post->title = "mon 2 post";
         // $post->content = "mon 2 contenur";
         // $post->save();
         //methode 2
-
        $post = Post::create([
-            "title" => "mon 3 titre",
-            "content" => "mon 3 contenu",
+            "title" => $request->input("title"),
+            "content" => $request->input("content"),
         ]);
 
-        return $post;
+        return redirect()->route("index.post");
     }
 
     public function posts(){
